@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+  <constant name="struts.i18n.encoding" value="utf-8" />
+   <package name="testjson1" namespace="/scoreManger" extends="json-default" >   
+   		<!--**********用户管理表***********-->
+       	<action name="ScoreManger_*" class="scoreAction" method="{1}">
+			<result name="LIST" type="json"> 
+					<param name="root">scorePage</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="ListAll" type="json"> 
+					<param name="root">scorePage</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="Add" type="json"> 
+					<param name="root">1</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="Addfail" type="json"> 
+					<param name="root">0</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+		</action>	
+	</package>
+</struts>

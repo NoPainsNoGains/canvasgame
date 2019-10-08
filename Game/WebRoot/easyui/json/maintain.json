@@ -1,0 +1,23 @@
+[{
+		"id":2,
+		"text":"维护记录",
+		"state":"open",
+		"children":[{
+				"text":"维护任务类型管理",
+				"attributes":{
+					"url":"task/ShowAllTaskClass.jsp"
+				}
+		},{
+			"text":"维护任务管理",
+			"attributes":{
+					"url":"task/ShowAllTask.jsp"
+			 }
+		},
+		{
+			"text":"维护任务审核",
+			"attributes":{
+					"url":"task/AuditTask.jsp"
+			 }
+		}]	
+	}
+]

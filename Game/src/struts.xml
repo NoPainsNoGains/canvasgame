@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<!-- <constant name="struts.ui.theme" value="simple" /> -->
+
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<constant name="struts.action.extension" value="action" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.multipart.maxSize" value="10701096000" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+
+	<include file="struts/struts_user.xml"/>
+	<include file="struts/struts_score.xml"/>
+	
+</struts>

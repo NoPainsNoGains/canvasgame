@@ -1,0 +1,17 @@
+[{
+		"id":2,
+		"text":"报表系统",
+		"state":"open",
+		"children":[{
+				"text":"设备运行统计报表",
+				"attributes":{
+					"url":"reportForm/EquipmentRun.jsp"
+				}
+		},{
+			"text":"维护记录统计报表",
+			"attributes":{
+					"url":"reportForm/MaintainRecord.jsp"
+			 }
+		}]	
+	}
+]

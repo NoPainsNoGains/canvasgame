@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+  <constant name="struts.i18n.encoding" value="utf-8" />
+   <package name="testjson" namespace="/userManger" extends="json-default" >   
+   		<!--**********用户管理表***********-->
+       	<action name="AdminManger_*" class="adminManagerAction" method="{1}">
+			<result name="LIST" type="json"> 
+					<param name="root">adminPage</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="LISTBYID" type="json"> 
+					<param name="root">adminPage</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="ADD" type="json"> 
+					<param name="root">1</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="AddFail" type="json">
+					<param name="root">0</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="EditSuccess" type="json"> 
+					<param name="root">1</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="EditFail" type="json">
+					<param name="root">0</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="Edit" type="json">
+					<param name="root">1</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="FINDUSER" type="json"> 
+					<param name="root">adminPage</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result> 
+		</action>	
+		
+		<!--**********登录管理表***********-->
+		<action name="LoginManger_*" class="loginAction" method="{1}">
+			<result name="DecideFail" type="json"> 
+					<param name="root">-1</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="DecideUser" type="json"> 
+					<param name="root">0</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="DecideAdmin" type="json"> 
+					<param name="root">1</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="LoginOut" type="json"> 
+					<param name="root">0</param>
+					<param name="contentType">text/html</param> 
+					<param name="noCache">true</param>  
+   				    <param name="excludeNullProperties">true</param>
+			</result>
+		</action>	
+	</package>
+</struts>

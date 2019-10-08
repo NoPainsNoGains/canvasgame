@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!--po bean-->
+	<bean id="sysAdmin" class="com.game.po.SysAdmin"/>
+	
+	<!--vo bean -->
+	<bean id="adminForm" class="com.game.vo.AdminForm"/>
+	<bean id="adminPage" class="com.game.page.AdminPage"/> 
+
+	<bean id="loginUser" class="com.game.vo.LoginUser"/>
+
+	<!-- 配置Dao组件 -->
+	<bean id="commonDaoImpl" class="com.game.dao.impl.CommonDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="adminDaoImpl" class="com.game.dao.userManager.impl.AdminDaoImpl" parent="commonDaoImpl"/>
+	
+	<!-- 配置service业务逻辑组件  -->
+	<bean id="adminServiceImpl" class="com.game.service.userManager.impl.AdminServiceImpl">
+		<property name="adminDaoImpl">
+			<ref bean="adminDaoImpl" />
+		</property>
+	</bean>
+
+	<bean id="loginServiceImpl" class="com.game.service.userManager.impl.LoginServiceImpl">
+		<property name="adminDaoImpl">
+			<ref bean="adminDaoImpl" />
+		</property>
+	</bean>
+	
+	
+	<!-- 把Action注入给Service --> 	
+	<bean id="adminManagerAction" class="com.game.action.userManager.AdminManagerAction" scope="prototype">
+		 <property name="adminServiceImpl">
+			<ref bean="adminServiceImpl" />
+		 </property>
+		 <property name="adminPage">
+			<ref bean="adminPage" />
+		 </property>
+	</bean>
+
+	<bean id="loginAction" class="com.game.action.userManager.LoginAction" scope="prototype">
+		 <property name="loginServiceImpl">
+			<ref bean="loginServiceImpl" />
+		 </property>
+		 <property name="loginUser">
+			<ref bean="loginUser" />
+		 </property>
+	</bean>
+	
+</beans>

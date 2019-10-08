@@ -1,0 +1,29 @@
+[{
+		"id":2,
+		"text":"系统管理",
+		"state":"open",
+		"children":[{
+				"text":"模块管理",
+				"attributes":{
+					"url":"module/ModuleShow.jsp"
+				}
+		},{
+			"text":"系统运行记录",
+			"attributes":{
+					"url":""
+			 }
+		},
+		{
+			"text":"用户行为记录",
+			"attributes":{
+					"url":"log/logShow.jsp"
+			 }
+		},
+		{
+			"text":"系统设置",
+			"attributes":{
+					"url":""
+			 }
+		}]	
+	}
+]

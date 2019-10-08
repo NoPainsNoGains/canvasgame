@@ -1,0 +1,36 @@
+[
+
+	{
+		"id":3,
+		"text":"处理对象",
+		"state":"open",
+		"children":[{
+				"text":"设备类型管理",
+				"attributes":{
+					"url":"equip/EquipClass.jsp"
+				}
+		},{
+			"text":"设备厂商管理",
+			"children":[{
+				"text":"设备厂商管理",
+				"attributes":{
+					"url":"equip/EquipFactory.jsp"
+				}
+			},
+			{
+				"text":"设备厂商联系方式管理",
+				"attributes":{
+					"url":"equip/FactoryContact.jsp"
+				}
+			}
+			]
+		},{
+			"text":"设备管理",
+			"attributes":{
+					"url":"equip/EquipManage.jsp"
+			 }
+		}
+		]	
+	}
+	
+	]

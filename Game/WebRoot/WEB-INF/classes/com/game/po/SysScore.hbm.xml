@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.game.po.SysScore" table="SYS_SCORE">
+        <id name="scoreId" type="java.lang.Integer">
+            <column name="SCORE_ID" precision="4" scale="0" />
+            <generator class="native" />
+        </id>
+     	<many-to-one name="sysAdmin" class="com.game.po.SysAdmin" fetch="select" lazy="false">
+            <column name="ADMIN_ID" precision="4" scale="0" not-null="true">
+                <comment>用户ID</comment>
+            </column>
+        </many-to-one>
+         <property name="scoreDate" type="java.util.Date">
+            <column name="SCORE_DATE" length="0" not-null="true">
+           		<comment>时间</comment>
+			</column>
+        </property>
+         <property name="scoreNumber" type="java.lang.Integer">
+            <column name="SCORE_NUMBER" precision="4" scale="0" not-null="true" >
+            	<comment>关数</comment>
+			</column>
+        </property>
+         <property name="scoreGrade" type="java.lang.Integer">
+            <column name="SCORE_GRADE" length="4" not-null="true">
+            	<comment>分数</comment>
+			</column>
+        </property>
+    </class>
+</hibernate-mapping>

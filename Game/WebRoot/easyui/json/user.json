@@ -1,0 +1,36 @@
+[{
+		"id":2,
+		"text":"用户管理",
+		"state":"open",
+		"children":[{
+			"text":"部门管理",
+			"attributes":{
+					"url":"userManger/department.jsp"
+			 }
+		},{
+				"text":"用户管理",
+				"attributes":{
+					"url":"userManger/userManger.jsp"
+				}
+		},{
+			"text":"职务管理",
+			"attributes":{
+					"url":"userManger/roleManger.jsp"
+			 }
+		},{
+			"text":"权限管理",
+			"children":[{
+				"text":"用户权限管理",
+				"attributes":{
+					"url":"userManger/userRole.jsp"
+				}
+			},
+			{
+				"text":"设备权限管理",
+				"attributes":{
+					"url":"userManger/EquipAuthority.jsp"
+				}
+			}]
+		}]	
+	}
+]
